@@ -11,7 +11,7 @@ import co.edu.unbosque.model.CandidatoDTO;
 
 public class CandidatoFile {
 	
-	private String ruta = "/EmpresaRH/src/co/edu/unbosque/model/persistence/candidatos.out";
+	private String ruta = "candidatos.dat";
 	private ArrayList<CandidatoDTO> candidatos;
 	
 	public String guardarCandidatos(ArrayList<CandidatoDTO> candidato) {

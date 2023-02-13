@@ -9,7 +9,7 @@ public class CandidatoDAO {
 		candidatos = new ArrayList<>();
 	}
 	
-	public void agregarCandidato(String pNom,String pApe, String pCed, int pEdad, String pCar) {
+	public void agregarCandidato(String pNom,String pApe, int pCed, int pEdad, String pCar) {
 		CandidatoDTO candidato = new CandidatoDTO(pNom, pApe, pCed, pEdad, pCar);
 		candidatos.add(candidato);
 	}
@@ -22,21 +22,21 @@ public class CandidatoDAO {
 				  "Nombres: " + candidatos.get(i).getNombre() + "\n" +
 				  "Apellidos: " + candidatos.get(i).getApellido() + "\n"+
 				  "Edad: " + candidatos.get(i).getEdad() + "\n" +
-				  "Cargo: " + candidatos.get(i).getEdad() + "\n";
+				  "Cargo: " + candidatos.get(i).getCargo() + "\n";
 		}
 		return lista;
 	}
-	public String listarCandidatoPorCedula(String pCed) {
-		String candidato = "";
+	public String listarCandidatoPorCedula(int pCed) {
+		String candidato = "No se ha encontrado al candidato";
 		int i = 0;
 		boolean encontrado = false;
 		while(i<candidatos.size()&&!encontrado) {
-			if(pCed.equals(candidatos.get(i).getCedula())) {				
+			if(pCed == candidatos.get(i).getCedula()) {				
 				candidato = "Cedula: "+ candidatos.get(i).getCedula() + "\n" +
 						  "Nombres: " + candidatos.get(i).getNombre() + "\n" +
 						  "Apellidos: " + candidatos.get(i).getApellido() + "\n"+
 						  "Edad: " + candidatos.get(i).getEdad() + "\n" +
-						  "Cargo: " + candidatos.get(i).getEdad() + "\n";
+						  "Cargo: " + candidatos.get(i).getCargo() + "\n";
 				encontrado = true;
 			}else {
 				encontrado = false;
@@ -47,11 +47,12 @@ public class CandidatoDAO {
 	}
 	public void eliminarCandidatos() {
 		int i = 0;
-		while(candidatos.get(i)!= null) {
+		for(i=0;i<candidatos.size();i++) {
 			candidatos.remove(i);
-			i++;
 		}
 	}
+	
+	
 	
 	public ArrayList<CandidatoDTO> getCandidatos() {
 		return candidatos;

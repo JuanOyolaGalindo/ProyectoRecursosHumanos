@@ -3,6 +3,8 @@ package co.edu.unbosque.view;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import co.edu.unbosque.controller.Controller;
 
 public class FrameMenu extends JFrame{
@@ -54,13 +56,36 @@ public class FrameMenu extends JFrame{
 		add(eliminarBut);
 	}
 	
+	public FrameAgregar getFa() {
+		return fa;
+	}
+
+	public void setFa(FrameAgregar fa) {
+		this.fa = fa;
+	}
+
 	public void abrirFrameAgregar(Controller pControl) {
 		fa = new FrameAgregar(pControl);
 		fa.setVisible(true);
 		this.setVisible(false);
 	}
-	
-	
+	public void abrirFrameMenu() {
+		fa.setVisible(false);
+		this.setVisible(true);
+	}
+	public void abrirFramePrincipal() {
+		this.setVisible(true);
+	}
+	public int capturarDatos() {
+		int cedula = Integer.parseInt(JOptionPane.showInputDialog("Digite la cédula:"));
+		return cedula;
+	}
+	public void mostrarFallo(String pMensaje) {
+		JOptionPane.showMessageDialog(null,pMensaje,null,JOptionPane.ERROR_MESSAGE);
+	}
+	public void mostrarMensaje(String pMen) {
+		JOptionPane.showMessageDialog(null, pMen);
+	}
 	public JButton getAgregarBut() {
 		return agregarBut;
 	}

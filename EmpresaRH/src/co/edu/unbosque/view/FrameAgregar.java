@@ -79,6 +79,55 @@ public class FrameAgregar extends JFrame{
 		add(volverbut);
 		add(siguientebut);
 	}
+
+
+	public JButton getVolverbut() {
+		return volverbut;
+	}
+
+	public JButton getSiguientebut() {
+		return siguientebut;
+	}
+
+	public JLabel getCedlab() {
+		return cedlab;
+	}
+
+	public JLabel getNomlab() {
+		return nomlab;
+	}
+
+	public JLabel getApelab() {
+		return apelab;
+	}
+
+	public JLabel getEdadlab() {
+		return edadlab;
+	}
+
+	public JLabel getCarlab() {
+		return carlab;
+	}
+
+	public JTextField getCedtf() {
+		return cedtf;
+	}
+
+	public JTextField getNomtf() {
+		return nomtf;
+	}
+
+	public JTextField getCartf() {
+		return cartf;
+	}
+
+	public JTextField getEdadtf() {
+		return edadtf;
+	}
+
+	public JTextField getApetf() {
+		return apetf;
+	}
 	
 	
 }
