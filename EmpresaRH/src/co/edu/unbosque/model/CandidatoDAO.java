@@ -51,8 +51,27 @@ public class CandidatoDAO {
 			candidatos.remove(i);
 		}
 	}
-	
-	
+	public int buscarCandidato(int pCed) {
+		int pos = -1, i=0;
+		boolean encontrado = false;
+		while(i<candidatos.size()&&!encontrado) {
+			if(pCed == candidatos.get(i).getCedula()) {								
+				encontrado = true;
+				pos = i;
+			}else {
+				encontrado = false;
+				i++;
+			}
+		}
+		return pos;
+	}
+	public void modificarCandidato(int pos,String pNom,String pApe, int pCed, int pEdad, String pCar) {
+		candidatos.get(pos).setNombre(pNom);
+		candidatos.get(pos).setApellido(pApe);
+		candidatos.get(pos).setCedula(pCed);
+		candidatos.get(pos).setEdad(pEdad);
+		candidatos.get(pos).setCargo(pCar);
+	}
 	
 	public ArrayList<CandidatoDTO> getCandidatos() {
 		return candidatos;

@@ -6,6 +6,7 @@ public class Empresa {
 	private CandidatoDAO candi;
 	private CandidatoFile candfil;
 	
+	
 	public Empresa(){
 		candi = new CandidatoDAO();
 		candfil = new CandidatoFile();
